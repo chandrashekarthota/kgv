@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "kamgarvan"
+  "defaultProject": "kamgarvan",
+  "cli": {
+    "analytics": false
+  }
 }
