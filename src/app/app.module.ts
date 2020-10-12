@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ThismonthComponent } from './thismonth/thismonth.component';
 import { LastmonthComponent } from './lastmonth/lastmonth.component';
 import { SliderComponent } from './slider/slider.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { SliderComponent } from './slider/slider.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

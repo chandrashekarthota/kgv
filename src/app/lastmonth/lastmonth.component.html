@@ -2,20 +2,20 @@
   <h3 style="text-align: center;font-family: 'segoe ui semibold';">September Winners</h3>
 
   <div style="padding: 5px;" *ngFor="let item of lastMonth">
-    <div style="display: inline-block; vertical-align: top;padding: 5px;">
-      <div><b>{{item.category}}</b></div>
-      <div><b><i>Winner</i></b> <br /> {{item.winner}}</div>
+    <div style="display: inline-block; vertical-align: top;padding: 5px;width: 50%;">
+      <div><b>{{item.gsx$category.$t}}</b></div>
+      <div><b><i>Winner</i></b> <br /> {{item.gsx$winner.$t}}</div>
       <div>
-        <i>{{item.videoTitle}}</i></div>
-      <div>Gift Status: {{item.giftStatus}}</div>
+        <i>{{item.gsx$videotitle.$t}}</i></div>
+      <div>Gift Status: {{item.gsx$giftstatus.$t}}</div>
     </div>
 
     <div style="display: inline-block;vertical-align: top;">
-      <img src="{{item.giftUrl}}" />
+      <img src="{{item.gsx$gifturl.$t}}" />
     </div>
     <hr />
     <div style="font-style: italic;">
-      Comment: {{item.Comment}}
+      Comment: {{item.gsx$comment.$t}}
     </div>
     <hr />
 

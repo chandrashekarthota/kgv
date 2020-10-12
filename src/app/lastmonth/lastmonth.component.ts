@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-lastmonth',
@@ -7,62 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LastmonthComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private httpClient: HttpClient) { }
+  myApiResult: any = [{
+    feed: {
+      entry:[]
+    }
+  }];
+  lastMonth =[];
+  apiUrl = "https://spreadsheets.google.com/feeds/list/1u0hRHBNw8FteRdz88gsQy7rWs-RNh91wQfuYfl6Acno/od6/public/values?alt=json";
   ngOnInit(): void {
+
+    this.getApiData();
   }
 
-  lastMonth =[
-    {
-      category:"Best Comment",
-      winner:"Krishna Veni",
-      videoTitle:"Instant Gunthaponganalu",
-      videoLink:"https://www.youtube.com/watch?v=PJgJl2oGNzw&feature=emb_logo",
-      giftUrl:"https://m.media-amazon.com/images/I/61Le6NqqpIL._AC_UL640_QL65_.jpg",
-      giftStatus:"Delivered",
-      giftTrackingUrl:"",
-      Comment:"Ma ammama gurthocharu.."
-    },
-    {
-      category:"Best Comment",
-      winner:"Chan Tho",
-      videoTitle:"Instant Gunthaponganalu",
-      videoLink:"https://www.youtube.com/watch?v=PJgJl2oGNzw&feature=emb_logo",
-      giftUrl:"https://m.media-amazon.com/images/I/61Le6NqqpIL._AC_UL640_QL65_.jpg",
-      giftStatus:"Delivered",
-      giftTrackingUrl:"",
-      Comment:""
-    },
-    {
-      category:"Best Comment",
-      winner:"Priyanka M",
-      videoTitle:"Instant Gunthaponganalu",
-      videoLink:"https://www.youtube.com/watch?v=PJgJl2oGNzw&feature=emb_logo",
-      giftUrl:"https://m.media-amazon.com/images/I/61Le6NqqpIL._AC_UL640_QL65_.jpg",
-      giftStatus:"Delivered",
-      giftTrackingUrl:"",
-      Comment:""
-    },
-    {
-      category:"Best Comment",
-      winner:"Jahnavi K",
-      videoTitle:"Instant Gunthaponganalu",
-      videoLink:"https://www.youtube.com/watch?v=PJgJl2oGNzw&feature=emb_logo",
-      giftUrl:"https://m.media-amazon.com/images/I/61Le6NqqpIL._AC_UL640_QL65_.jpg",
-      giftStatus:"Delivered",
-      giftTrackingUrl:"",
-      Comment:""
-    },
-    {
-      category:"Best Comment",
-      winner:"svs t",
-      videoTitle:"Instant Gunthaponganalu",
-      videoLink:"https://www.youtube.com/watch?v=PJgJl2oGNzw&feature=emb_logo",
-      giftUrl:"https://m.media-amazon.com/images/I/61Le6NqqpIL._AC_UL640_QL65_.jpg",
-      giftStatus:"Delivered",
-      giftTrackingUrl:"",
-      Comment:""
-    }
-  ]
+
+  getApiData() {
+    this.httpClient.get(this.apiUrl).subscribe((pulledData: any[]) => {
+      this.myApiResult = pulledData;
+      console.log(this.myApiResult.feed.entry);
+      this.lastMonth = this.myApiResult.feed.entry;
+    });
+  }  
 
 }
