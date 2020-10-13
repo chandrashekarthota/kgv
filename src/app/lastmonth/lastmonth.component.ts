@@ -25,7 +25,7 @@ export class LastmonthComponent implements OnInit {
   getApiData() {
     this.httpClient.get(this.apiUrl).subscribe((pulledData: any[]) => {
       this.myApiResult = pulledData;
-      console.log(this.myApiResult.feed.entry);
+      //console.log(this.myApiResult.feed.entry);
       this.lastMonth = this.myApiResult.feed.entry;
     });
   }  
