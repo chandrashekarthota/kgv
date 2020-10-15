@@ -11,6 +11,7 @@ import { ThismonthComponent } from './thismonth/thismonth.component';
 import { LastmonthComponent } from './lastmonth/lastmonth.component';
 import { SliderComponent } from './slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
+import { YoutubecommentsComponent } from './youtubecomments/youtubecomments.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ThismonthComponent,
     LastmonthComponent,
-    SliderComponent
+    SliderComponent,
+    YoutubecommentsComponent
   ],
   imports: [
     BrowserModule,
