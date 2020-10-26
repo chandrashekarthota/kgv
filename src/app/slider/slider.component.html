@@ -1,38 +1,44 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[0]" alt="Random first slide" width="100%">
-    </div>
-    <div class="carousel-caption">
-      <h3>Subscribe, Like, Comment</h3>
-      <p>If your comment is one of the best comments... then, oohooo... You will get a surprise gift delivered to your house.</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[1]" alt="Random second slide"  width="100%">
-    </div>
-    <div class="carousel-caption">
-      <h3>You got more likes to your comment.....?</h3>
-      <p>Boom boom... You will be a winner and get ready the open the surprise gift.</p>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[2]" alt="Random third slide"  width="100%">
-    </div>
-    <div class="carousel-caption">
-      <h3>30 surprise gifts every month in 2020</h3>
-      <p>Not one gift or two gifts. 30 gifts are waiting for you every month. Maximum of 2 gifts a month per one address.</p>
-    </div>    
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img [src]="images[3]" alt="Random third slide"  width="100%">
-    </div>
-    <div class="carousel-caption">
-      <h3>Get..Set.. Go... Grab your gift now..</h3>
-      <p>Post your comment for one youtube video. Get more likes for your comment. Stand as a proud winner.</p>
-    </div>   
-  </ng-template>
-</ngb-carousel>
+<div class="row">
+  <div class="col-sm-12">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Random first slide" width="100%">
+        </div>
+        <div class="carousel-caption">
+          <h3>Subscribe, Like, Comment</h3>
+          <p>If your comment is one of the best comments... then, oohooo... You will get a surprise gift delivered to
+            your house.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Random second slide" width="100%">
+        </div>
+        <div class="carousel-caption">
+          <h3>You got more likes to your comment.....?</h3>
+          <p>Boom boom... You will be a winner and get ready the open the surprise gift.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide" width="100%">
+        </div>
+        <div class="carousel-caption">
+          <h3>30 surprise gifts every month in 2020</h3>
+          <p>Not one gift or two gifts. 30 gifts are waiting for you every month. Maximum of 2 gifts a month per one
+            address.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[3]" alt="Random third slide" width="100%">
+        </div>
+        <div class="carousel-caption">
+          <h3>Get..Set.. Go... Grab your gift now..</h3>
+          <p>Post your comment for one youtube video. Get more likes for your comment. Stand as a proud winner.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
