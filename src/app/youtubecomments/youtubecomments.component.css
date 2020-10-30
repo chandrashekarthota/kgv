@@ -1,0 +1,30 @@
+.winnerDetails{
+padding: 20px;
+font-family: segoe ui semibold;
+font-size: 15px;
+display: inline-block;
+width: 15%;
+float: right;
+border: solid;
+border-color: lightgray;
+border-width: thin;
+padding: 10px;
+margin: 5px;
+border-radius: 15px;
+height: 125px;
+text-align: center;
+
+
+}
+.modal .modal-dialog{
+    width: 70% !important;
+    max-width: 70% !important;
+}
+
+/* .elipse{
+    white-space: nowrap; 
+  width: 50px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  border: 1px solid #000000;
+} */

@@ -1,27 +1,58 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <h4 class="modal-title">Congratulations October Winners</h4>
+      </div>
+      <div class="modal-body">
+        <div style="padding: 5px;display: contents;" *ngFor="let winner of winners; let i = index">
+          <div class="winnerDetails">
+            <div>
+            <img src="{{winner[0].snippet.topLevelComment.snippet.authorProfileImageUrl}}" height="50px" width="50px"
+              style="border-radius: 30px;" />
+            </div>
+            <div class="elipse">
+            {{winner[0].snippet.topLevelComment.snippet.authorDisplayName}}
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div style="padding: 5px;" *ngFor="let item of sortedComments; let i = index">
 
 
-    <div class="card" style="width: 100%;">
-        <div class="card-body">
-            <h4>Top #{{i+1}}  <span class="card-subtitle mb-2 text-muted" style="font-size: 12px;padding-left: 30px;;">  {{item.snippet.topLevelComment.snippet.likeCount}} Likes</span></h4>
-            <h5 class="card-title">
-               
-                    <img src="{{item.snippet.topLevelComment.snippet.authorProfileImageUrl}}" height="50px" width="50px"
-                        style="border-radius: 30px;" />
-                
-               
-                    {{item.snippet.topLevelComment.snippet.authorDisplayName}}
-                
-            </h5>
-            
-            <p class="card-text">
-                <a target="_blank" href="https://www.youtube.com/watch?v={{item.snippet.topLevelComment.snippet.videoId}}">
-                {{item.snippet.topLevelComment.snippet.textOriginal}}
-            </a>
-            </p>
-            
-        </div>
+  <div class="card" style="width: 100%;">
+    <div class="card-body">
+      <h4>Top #{{i+1}} <span class="card-subtitle mb-2 text-muted" style="font-size: 12px;padding-left: 30px;;">
+          {{item.snippet.topLevelComment.snippet.likeCount}} Likes</span></h4>
+      <h5 class="card-title">
+
+        <img src="{{item.snippet.topLevelComment.snippet.authorProfileImageUrl}}" height="50px" width="50px"
+          style="border-radius: 30px;" />
+        {{item.snippet.topLevelComment.snippet.authorDisplayName}}
+      </h5>
+
+      <p class="card-text">
+        <a target="_blank" href="https://www.youtube.com/watch?v={{item.snippet.topLevelComment.snippet.videoId}}">
+          {{item.snippet.topLevelComment.snippet.textOriginal}}
+        </a>
+      </p>
+
     </div>
+  </div>
 
 
 </div>
