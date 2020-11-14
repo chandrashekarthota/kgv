@@ -1,13 +1,18 @@
 <div style="vertical-align: top;">
-  <h3 style="text-align: center;font-family: 'segoe ui semibold';">Past Winners</h3>
+  <h3 style="text-align: center;font-family: 'segoe ui semibold';">October Winners</h3>
 
   <div style="padding: 5px;" *ngFor="let item of lastMonth">
     <div style="display: inline-block; vertical-align: top;padding: 5px;">
       <div><b>{{item.gsx$category.$t}}</b></div>
-      <div><b><i>Winner</i></b> <br /> {{item.gsx$winner.$t}}</div>
+      <div><b><i>Winner</i></b> <br />
+        <span style="font-size: 25px;font-family: 'segoe ui semibold';"> {{item.gsx$winner.$t}}</span></div>
       <div>
         <i>{{item.gsx$videotitle.$t}}</i></div>
-      <div>Gift Status: {{item.gsx$giftstatus.$t}}</div>
+      <div aria-placeholder="use live chat to redeem gift" >
+        Gift Status: {{item.gsx$giftstatus.$t}}  <br />
+        <span > 
+          Share delivery details to <span style="color:red;">thotalakshmikamala@gmail.com</span> </span>    
+      </div>
     </div>
 
     <div style="display: inline-block;vertical-align: top;">

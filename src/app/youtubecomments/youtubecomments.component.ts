@@ -13,10 +13,8 @@ export class YoutubecommentsComponent implements OnInit {
   APIKey = "AIzaSyDIHKU-1WxkDuuDF9ZaQKdfD8QPZhVXxcQ";
   channelId = "UCTdwo3KQySgWQCAf4BTfBjg";
 
-  videoIds = ["RbLwpk0dkQg", "tjkJ45yetTs", "Ndgd3JZMfHU", "kToxmmkzoZ4", "_5RDd4igN-0", "xyLmdxIqbh0", "NScddspXhm8",
-    "ok236zmHpgA", "PJgJl2oGNzw", "OkGvO74wrp4", "jQK12V9R-ck", "BfMRxloH8bQ",
-    "l3w2cUeJnms", "vq_3ZZnu5qQ", "q7GsR8fIIhY", "uNpPX7n95RU", "aM-ENz7AT1o", "V-aPyP5xq3Q",
-    "9_LEAw8ue6A", "vJt8IBBpCN4", "IZLWmFjmPA4", "2zl0YDPqTB4", "iKN3r2xGCfs", "7MWZUYWV-Wo"];
+  videoIds = ["hHqmNehcY9I","n-qlYf9NTBk","i0DDGXJimcA","-tLw3q4JgPM","8Luw327wI2U","7MWZUYWV-Wo","tjkJ45yetTs",
+"RbLwpk0dkQg&t=11s","Ndgd3JZMfHU","kToxmmkzoZ4&t=23s","_5RDd4igN-0&t=25s","xyLmdxIqbh0&t=7s"];
 
   apiUrl = "";
   staticApiUrl = "/assets/youtubecomments.json";
@@ -51,7 +49,7 @@ export class YoutubecommentsComponent implements OnInit {
       });
       
       this.winners = Object.values(grouped);
-      console.log(this.winners);
+      //console.log(this.winners);
     });
   }
 

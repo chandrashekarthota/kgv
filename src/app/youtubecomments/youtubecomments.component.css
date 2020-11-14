@@ -2,16 +2,15 @@
 padding: 20px;
 font-family: segoe ui semibold;
 font-size: 15px;
-display: inline-block;
+display: inline-table;
 width: 15%;
-float: right;
 border: solid;
 border-color: lightgray;
 border-width: thin;
 padding: 10px;
 margin: 5px;
 border-radius: 15px;
-height: 125px;
+height: 110px;
 text-align: center;
 
 
