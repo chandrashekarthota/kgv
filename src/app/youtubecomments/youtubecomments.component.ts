@@ -13,8 +13,7 @@ export class YoutubecommentsComponent implements OnInit {
   APIKey = "AIzaSyDIHKU-1WxkDuuDF9ZaQKdfD8QPZhVXxcQ";
   channelId = "UCTdwo3KQySgWQCAf4BTfBjg";
 
-  videoIds = ["hHqmNehcY9I","n-qlYf9NTBk","i0DDGXJimcA","-tLw3q4JgPM","8Luw327wI2U","7MWZUYWV-Wo","tjkJ45yetTs",
-"RbLwpk0dkQg&t=11s","Ndgd3JZMfHU","kToxmmkzoZ4&t=23s","_5RDd4igN-0&t=25s","xyLmdxIqbh0&t=7s"];
+  videoIds = ["QDysU3Beu3Y","8sCF8tCIPbc","l7ixQIehyRU","wuK0bUeo01c","tNvJjurlHkM","9bDNdU25rAQ","r9jJabXKDwk","JbN2EXC4gTc","fTSKqXfZp-8","QDtUInv-VAw","bkTl4sGVw2o","ChuaAI3BJ7Y","r41_ZQ8f6cQ"];
 
   apiUrl = "";
   staticApiUrl = "/assets/youtubecomments.json";
@@ -28,8 +27,8 @@ export class YoutubecommentsComponent implements OnInit {
   //_ = require('lodash');
 
   ngOnInit(): void {
-    //this.getApiData();
-    this.getStaticYoutubeComments();
+   this.getApiData();
+    //this.getStaticYoutubeComments();
   }
 
   getStaticYoutubeComments(){
@@ -59,10 +58,11 @@ export class YoutubecommentsComponent implements OnInit {
 
         this.apiUrl = "https://www.googleapis.com/youtube/v3/commentThreads?key=" + this.APIKey + "&videoId=" + this.videoIds[i] + "&part=snippet&maxResults=50";
 
-        this.httpClient.get(this.apiUrl).subscribe((pulledData: any[]) => {
+        this.httpClient.get(this.apiUrl).subscribe(
+          (pulledData: any[]) => {
           this.comments = [];
           this.myApiResult = pulledData;
-          this.comments = this.myApiResult.items.filter(k => k.snippet.topLevelComment.snippet.likeCount > 0);
+          this.comments = this.myApiResult.items.filter(k => k.snippet.topLevelComment.snippet.likeCount >= 2);
           //append next video comments to previous video comments
           this.mergedComments = [...this.mergedComments, ...this.comments];
           //sort comments by likes
@@ -71,7 +71,12 @@ export class YoutubecommentsComponent implements OnInit {
           });
            console.log('merged object');
            console.log(this.sortedComments);
-        });
+        },error => {
+          console.log(error);
+          this.getStaticYoutubeComments();
+        }
+        
+        );
       //}
     }
   }
